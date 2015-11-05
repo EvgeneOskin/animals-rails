@@ -14,9 +14,9 @@
 ActiveRecord::Schema.define(version: 20151105142046) do
 
   create_table "births", force: :cascade do |t|
-    t.integer  "child_id"
-    t.integer  "father_id"
-    t.integer  "mother_id"
+    t.integer  "child_id",   null: false
+    t.integer  "father_id",  null: false
+    t.integer  "mother_id",  null: false
     t.string   "place"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
