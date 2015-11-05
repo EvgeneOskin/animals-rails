@@ -1,0 +1,6 @@
+AllCops:
+  Exclude:
+    - config/unicorn.rb
+    - db/**/*.rb
+    - vendor/**/*
+  RunRailsCops: true

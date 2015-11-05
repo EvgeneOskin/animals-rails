@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  child: first_dog
+  father: father
+  mother: mother
+
+two:
+  child: second_dog
+  father: father
+  mother: mother
