@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  child_id: 
+  father_id: 
+  mother_id: 
+
+two:
+  child_id: 
+  father_id: 
+  mother_id: 

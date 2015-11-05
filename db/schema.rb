@@ -11,7 +11,40 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151031125545) do
+ActiveRecord::Schema.define(version: 20151105142046) do
+
+  create_table "births", force: :cascade do |t|
+    t.integer  "child_id"
+    t.integer  "father_id"
+    t.integer  "mother_id"
+    t.string   "place"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "births", ["child_id"], name: "index_births_on_child_id"
+  add_index "births", ["father_id"], name: "index_births_on_father_id"
+  add_index "births", ["mother_id"], name: "index_births_on_mother_id"
+
+  create_table "pets", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "species_id"
+    t.integer  "owner_id"
+    t.integer  "gender"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "pets", ["owner_id"], name: "index_pets_on_owner_id"
+  add_index "pets", ["species_id"], name: "index_pets_on_species_id"
+
+  create_table "species", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "species", ["name"], name: "index_species_on_name", unique: true
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
