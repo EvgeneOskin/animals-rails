@@ -22,6 +22,20 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+gem 'devise'
+gem 'omniauth'
+gem 'omniauth-vkontakte'
+gem 'omniauth-google'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-gplus', '~> 2.0'
+gem 'omniauth-github'
+gem 'omniauth-facebook'
+gem 'omniauth-facebook-access-token'
+gem 'omniauth-twitter'
+gem 'omniauth-yandex'
+gem 'omniauth-mail_ru'
+gem 'actionpack'
+
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 

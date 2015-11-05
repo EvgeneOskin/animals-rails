@@ -1,0 +1,24 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+father:
+  name: Father
+  species: dog
+  owner: one
+  gender: male
+
+mother:
+  name: Mother
+  species: dog
+  owner: one
+
+first_dog:
+  name: First dog
+  species: dog
+  owner: one
+  gender:
+
+second_dog:
+  name: Second dog
+  species: dog
+  owner: one
+  gender:
