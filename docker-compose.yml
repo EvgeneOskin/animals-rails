@@ -1,0 +1,18 @@
+web:
+  build: .
+  command: sh -c 'sleep 10 && ./run.sh'
+  links:
+    - db:db
+  environment:
+    DATABASE_URL: 'postgresql://pet:secret@db/pet'
+    PORT: 80
+  ports:
+    - "80:80"
+
+db:
+  image: mdillon/postgis
+  environment:
+    POSTGRES_PASSWORD: secret
+    POSTGRES_USER: pet
+  ports:
+    - "5432:5432"
