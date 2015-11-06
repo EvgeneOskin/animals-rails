@@ -1,0 +1,11 @@
+Makefile
+Dockerfile
+.git
+docker-compose.yml
+vendor
+tmp
+log
+coverage
+.bundle
+db/*.sqlite3
+db/*.sqlite3-journal
