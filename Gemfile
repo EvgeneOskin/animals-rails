@@ -35,6 +35,8 @@ gem 'omniauth-yandex'
 gem 'omniauth-mail_ru'
 gem 'actionpack'
 
+gem 'administrate'
+
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 

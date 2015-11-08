@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 20151105142046) do
   add_index "pets", ["species_id"], name: "index_pets_on_species_id"
 
   create_table "species", force: :cascade do |t|
-    t.string   "name"
+    t.string   "name",       null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
