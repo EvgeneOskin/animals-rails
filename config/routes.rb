@@ -1,9 +1,6 @@
 Rails.application.routes.draw do
-  match 'pet/create', via: [:get, :post]
 
-  get 'pet/list'
-
-  get 'pet/detail'
+  resources :pets
 
   devise_for :users
   # The priority is based upon order of creation: first created -> highest

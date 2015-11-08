@@ -1,3 +1,3 @@
 # Helpers for pet controller.
-module PetHelper
+module PetsHelper
 end
