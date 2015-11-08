@@ -58,6 +58,7 @@ group :development, :test do
 
   # Generate users for tests.
   gem 'factory_girl_rails'
+  gem 'faker'
 
   # Collect coverrage and publicate it.
   gem 'simplecov'
