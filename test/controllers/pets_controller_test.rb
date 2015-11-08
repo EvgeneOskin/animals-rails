@@ -1,23 +1,23 @@
 require 'test_helper'
 
-class PetControllerTest < ActionController::TestCase
+class PetsControllerTest < ActionController::TestCase
   test 'should post create' do
-    post :create
+    post :new
     assert_response :success
   end
 
   test 'should get create' do
-    get :create
+    get :new
     assert_response :success
   end
 
   test 'should get list' do
-    get :list
+    get :index
     assert_response :success
   end
 
   test 'should get detail' do
-    get :detail
+    get :show, id: pets(:father).id
     assert_response :success
   end
 end
