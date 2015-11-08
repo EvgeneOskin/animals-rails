@@ -8,7 +8,7 @@ class PetsController < ApplicationController
   def create
     pet = Pet.create!(
       name: params[:name],
-      species_id: params[:species_id],
+      breed_id: params[:breed_id],
       gender: params[:gender],
       owner: current_user
     )

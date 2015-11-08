@@ -26,25 +26,25 @@ ActiveRecord::Schema.define(version: 20151105142046) do
   add_index "births", ["father_id"], name: "index_births_on_father_id"
   add_index "births", ["mother_id"], name: "index_births_on_mother_id"
 
+  create_table "breeds", force: :cascade do |t|
+    t.string   "name",       null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "breeds", ["name"], name: "index_breeds_on_name", unique: true
+
   create_table "pets", force: :cascade do |t|
     t.string   "name"
-    t.integer  "species_id", null: false
+    t.integer  "breed_id",   null: false
     t.integer  "owner_id",   null: false
     t.integer  "gender"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  add_index "pets", ["breed_id"], name: "index_pets_on_breed_id"
   add_index "pets", ["owner_id"], name: "index_pets_on_owner_id"
-  add_index "pets", ["species_id"], name: "index_pets_on_species_id"
-
-  create_table "species", force: :cascade do |t|
-    t.string   "name",       null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "species", ["name"], name: "index_species_on_name", unique: true
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

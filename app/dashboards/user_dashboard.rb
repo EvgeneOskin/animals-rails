@@ -1,5 +1,6 @@
-require "administrate/base_dashboard"
+require 'administrate/base_dashboard'
 
+# Dashboard for User model.
 class UserDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
@@ -20,7 +21,7 @@ class UserDashboard < Administrate::BaseDashboard
     current_sign_in_ip: Field::String,
     last_sign_in_ip: Field::String,
     created_at: Field::DateTime,
-    updated_at: Field::DateTime,
+    updated_at: Field::DateTime
   }
 
   # COLLECTION_ATTRIBUTES
@@ -32,7 +33,7 @@ class UserDashboard < Administrate::BaseDashboard
     :id,
     :email,
     :encrypted_password,
-    :reset_password_token,
+    :reset_password_token
   ]
 
   # SHOW_PAGE_ATTRIBUTES
@@ -52,6 +53,6 @@ class UserDashboard < Administrate::BaseDashboard
     :current_sign_in_at,
     :last_sign_in_at,
     :current_sign_in_ip,
-    :last_sign_in_ip,
+    :last_sign_in_ip
   ]
 end

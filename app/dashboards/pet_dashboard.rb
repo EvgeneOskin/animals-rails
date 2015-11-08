@@ -1,5 +1,6 @@
-require "administrate/base_dashboard"
+require 'administrate/base_dashboard'
 
+# Dashboard for Pet model.
 class PetDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
@@ -8,14 +9,14 @@ class PetDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    species: Field::BelongsTo,
-    owner: Field::BelongsTo.with_options(class_name: "User"),
+    breed: Field::BelongsTo,
+    owner: Field::BelongsTo.with_options(class_name: 'User'),
     id: Field::Number,
     name: Field::String,
     owner_id: Field::Number,
     gender: Field::Number,
     created_at: Field::DateTime,
-    updated_at: Field::DateTime,
+    updated_at: Field::DateTime
   }
 
   # COLLECTION_ATTRIBUTES
@@ -24,10 +25,10 @@ class PetDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
-    :species,
+    :breed,
     :owner,
     :id,
-    :name,
+    :name
   ]
 
   # SHOW_PAGE_ATTRIBUTES
@@ -38,10 +39,10 @@ class PetDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
-    :species,
+    :breed,
     :owner,
     :name,
     :owner_id,
-    :gender,
+    :gender
   ]
 end

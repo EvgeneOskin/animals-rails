@@ -8,8 +8,8 @@
       <%= text_field_tag(:name) %>
     </div>
     <div>
-      <%= label_tag(:species_id, "Choose pet Species") %>
-      <%= select_tag(:species_id, options_from_collection_for_select(Species.all, :id, :name)) %>
+      <%= label_tag(:breed_id, "Choose pet Breed") %>
+      <%= select_tag(:breed_id, options_from_collection_for_select(Breed.all, :id, :name)) %>
     </div>
     <div>
       <%= radio_button_tag(:gender, "male") %>

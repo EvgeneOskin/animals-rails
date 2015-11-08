@@ -1,5 +1,6 @@
-require "administrate/base_dashboard"
+require 'administrate/base_dashboard'
 
+# Dashboard for Birth models.
 class BirthDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
@@ -8,16 +9,16 @@ class BirthDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    child: Field::BelongsTo.with_options(class_name: "Pet"),
-    father: Field::BelongsTo.with_options(class_name: "Pet"),
-    mother: Field::BelongsTo.with_options(class_name: "Pet"),
+    child: Field::BelongsTo.with_options(class_name: 'Pet'),
+    father: Field::BelongsTo.with_options(class_name: 'Pet'),
+    mother: Field::BelongsTo.with_options(class_name: 'Pet'),
     id: Field::Number,
     child_id: Field::Number,
     father_id: Field::Number,
     mother_id: Field::Number,
     place: Field::String,
     created_at: Field::DateTime,
-    updated_at: Field::DateTime,
+    updated_at: Field::DateTime
   }
 
   # COLLECTION_ATTRIBUTES
@@ -29,7 +30,7 @@ class BirthDashboard < Administrate::BaseDashboard
     :child,
     :father,
     :mother,
-    :id,
+    :id
   ]
 
   # SHOW_PAGE_ATTRIBUTES
@@ -46,6 +47,6 @@ class BirthDashboard < Administrate::BaseDashboard
     :child_id,
     :father_id,
     :mother_id,
-    :place,
+    :place
   ]
 end

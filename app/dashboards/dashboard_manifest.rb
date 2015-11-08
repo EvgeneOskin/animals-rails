@@ -13,7 +13,7 @@ class DashboardManifest
     :users,
     :births,
     :pets,
-    :species,
+    :breeds
   ]
 
   # `ROOT_DASHBOARD`

@@ -10,7 +10,7 @@ class PetsControllerTest < ActionController::TestCase
 
   test 'should post create and raise invalid' do
     error_message = "Validation failed: Name can't be blank,"\
-      " Species can't be blank,"\
+      " Breed can't be blank,"\
       " Gender can't be blank"
     assert_raise ActiveRecord::RecordInvalid, error_message do
       post :create
@@ -18,7 +18,7 @@ class PetsControllerTest < ActionController::TestCase
   end
 
   test 'should post create' do
-    post :create, name: 'test', gender: 'male', species_id: species(:dog).id
+    post :create, name: 'test', gender: 'male', breed_id: breeds(:dog).id
     assert_response :redirect
     new_pet = Pet.find_by name: 'test'
     assert_redirected_to "/pets/#{new_pet.id}"

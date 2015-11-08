@@ -1,6 +1,7 @@
-require "administrate/base_dashboard"
+require 'administrate/base_dashboard'
 
-class SpeciesDashboard < Administrate::BaseDashboard
+# Dashboard for Breed model.
+class BreedDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
   #
@@ -11,7 +12,7 @@ class SpeciesDashboard < Administrate::BaseDashboard
     id: Field::Number,
     name: Field::String,
     created_at: Field::DateTime,
-    updated_at: Field::DateTime,
+    updated_at: Field::DateTime
   }
 
   # COLLECTION_ATTRIBUTES
@@ -23,7 +24,7 @@ class SpeciesDashboard < Administrate::BaseDashboard
     :id,
     :name,
     :created_at,
-    :updated_at,
+    :updated_at
   ]
 
   # SHOW_PAGE_ATTRIBUTES
@@ -34,6 +35,6 @@ class SpeciesDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
-    :name,
+    :name
   ]
 end
