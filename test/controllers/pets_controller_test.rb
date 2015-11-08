@@ -1,8 +1,15 @@
 require 'test_helper'
 
 class PetsControllerTest < ActionController::TestCase
+  include Devise::TestHelpers
+
+  def setup
+    @request.env["devise.mapping"] = Devise.mappings[:admin]
+    sign_in FactoryGirl.create(:admin)
+  end
+
   test 'should post create' do
-    post :new
+    post :create
     assert_response :success
   end
 

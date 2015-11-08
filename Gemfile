@@ -56,6 +56,9 @@ group :development, :test do
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
 
+  # Generate users for tests.
+  gem 'factory_girl_rails'
+
   # Collect coverrage and publicate it.
   gem 'simplecov'
   gem 'coveralls'
