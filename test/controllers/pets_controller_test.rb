@@ -34,8 +34,23 @@ class PetsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test 'should get show' do
+  test 'should get show for father' do
     get :show, id: pets(:father).id
+    assert_response :success
+  end
+
+  test 'should get show for mother' do
+    get :show, id: pets(:mother).id
+    assert_response :success
+  end
+
+  test 'should get show for both parents' do
+    get :show, id: pets(:full_family_dog).id
+    assert_response :success
+  end
+
+  test 'should get show for single parent' do
+    get :show, id: pets(:single_parent_dog).id
     assert_response :success
   end
 end

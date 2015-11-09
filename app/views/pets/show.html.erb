@@ -17,8 +17,8 @@
 <div>
   Children:
   <ul class="list-group">
-    <% @pet.children do |pet| %>
-      <li class="list-group-item"><%= link_to pet.namem pet_path pet.id %></li>
+    <% @pet.children.each do |pet| %>
+      <li class="list-group-item"><%= link_to pet.name, pet_path(pet.id) %></li>
     <% end %>
   </ul>
 </div>

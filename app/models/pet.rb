@@ -23,11 +23,12 @@ class Pet < ActiveRecord::Base
   end
 
   def children
-    if gender == :female
-      Birth.where mother: self
+    if gender == 'male'
+      births = Birth.where father: self
     else
-      Birth.where father: self
+      births = Birth.where mother: self
     end
+    births.includes(:child).map(&:child)
   end
 
   def self.where_can_be_father
