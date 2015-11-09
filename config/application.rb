@@ -31,7 +31,7 @@ module AnimalsRails
     config.active_record.raise_in_transactional_callbacks = true
 
     # Add REST API to app.
-    config.paths.add "app/api", glob: "**/*.rb"
+    config.paths.add 'app/api', glob: '**/*.rb'
     config.autoload_paths += Dir["#{Rails.root}/app/api/*"]
   end
 end

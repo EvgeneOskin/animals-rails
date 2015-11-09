@@ -6,6 +6,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   def self.authorize!(env)
-    self.find_by email: env['REMOTE_USER']
+    find_by email: env['REMOTE_USER']
   end
 end

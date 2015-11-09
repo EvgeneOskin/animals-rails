@@ -1,4 +1,5 @@
 module Animal
+  # Class with grape api for Animal project.
   class API < Grape::API
     version 'v1', using: :path
     format :json
@@ -19,20 +20,20 @@ module Animal
       user.valid_password? password if user
     end
 
-    desc 'Pet index.', {
-      params: Entities::Pet.documentation
-    }
+    desc 'Pet index.', params: Entities::Pet.documentation
     get '/pet' do
       authenticate!
       pets = Pet.all
       present pets, with: Entities::Pet, type: :full
     end
 
-    desc 'Create a pet.', {
-      params: Entities::Pet.documentation
-    }
+    desc 'Create a pet.', params: Entities::Pet.documentation
     params do
-      requires :all, except: [:id, :owner_email], using: Entities::Pet.documentation.except(:id, :owner_email)
+      requires(
+        :all,
+        except: [:id, :email],
+        using: Entities::Pet.documentation.except(:id, :email)
+      )
     end
     post '/pet' do
       authenticate!
@@ -41,18 +42,14 @@ module Animal
       end
     end
 
-    desc 'Breed index.', {
-      params: Entities::Breed.documentation
-    }
+    desc 'Breed index.', params: Entities::Breed.documentation
     get '/breed' do
       authenticate!
       breeds = Breed.all
       present breeds, with: Entities::Breed, type: :full
     end
 
-    desc 'Birth index.', {
-      params: Entities::Birth.documentation
-    }
+    desc 'Birth index.', params: Entities::Birth.documentation
     get '/birth' do
       authenticate!
       births = Birth.all
