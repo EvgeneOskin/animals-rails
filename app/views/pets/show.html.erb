@@ -1,2 +1,24 @@
-<h1>Pet#detail</h1>
-<p>Find me in app/views/pet/detail.html.erb</p>
+<h1>Pet</h1>
+<div>
+  Name: <%= @pet.name %>
+</div>
+<div>
+  Gender: <%= @pet.gender %>
+</div>
+<div>
+  Owner: <%= @pet.owner.email %>
+</div>
+<div>
+  Father: <%= link_to_father @pet, 'N/A' %>
+</div>
+<div>
+  Mother: <%= link_to_mother @pet, 'N/A' %>
+</div>
+<div>
+  Children:
+  <ul class="list-group">
+    <% @pet.children do |pet| %>
+      <li class="list-group-item"><%= link_to pet.namem pet_path pet.id %></li>
+    <% end %>
+  </ul>
+</div>

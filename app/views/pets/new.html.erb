@@ -19,6 +19,16 @@
       <%= radio_button_tag(:gender, "female") %>
       <%= label_tag(:gender_female, "My pet is female") %>
     </div>
+    <div>
+      <%= label_tag(:father_id, "Father") %>
+      <% fathers = options_for_select_parent_and_not_use(Pet.where_can_be_father) %>
+      <%= select_tag(:father_id, options_for_select(fathers)) %>
+    </div>
+    <div>
+      <%= label_tag(:mother_id, "Mother") %>
+      <% mothers = options_for_select_parent_and_not_use(Pet.where_can_be_mother) %>
+      <%= select_tag(:mother_id, options_for_select(mothers)) %>
+    </div>
     <%= submit_tag("Create") %>
   </div>
 <% end %>

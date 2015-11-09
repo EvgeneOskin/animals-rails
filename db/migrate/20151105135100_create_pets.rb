@@ -4,7 +4,7 @@ class CreatePets < ActiveRecord::Migration
       t.string :name
       t.references :breed, breed: true, index: true, null: false
       t.references :owner, user: true, index: true, null: false
-      t.integer :gender
+      t.integer :gender, null: false
 
       t.timestamps null: false
     end

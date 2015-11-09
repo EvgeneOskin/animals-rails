@@ -33,8 +33,8 @@ ActiveRecord::Schema.define(version: 20151108182547) do
 
   create_table "births", force: :cascade do |t|
     t.integer  "child_id",   null: false
-    t.integer  "father_id",  null: false
-    t.integer  "mother_id",  null: false
+    t.integer  "father_id"
+    t.integer  "mother_id"
     t.string   "place"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -56,7 +56,7 @@ ActiveRecord::Schema.define(version: 20151108182547) do
     t.string   "name"
     t.integer  "breed_id",   null: false
     t.integer  "owner_id",   null: false
-    t.integer  "gender"
+    t.integer  "gender",     null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
