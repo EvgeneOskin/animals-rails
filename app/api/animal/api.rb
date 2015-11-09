@@ -15,7 +15,7 @@ module Animal
 
     http_basic do |username, password|
       # verify user's password here
-      user = User.first email: username
+      user = User.find_by email: username
       user.valid_password? password
     end
 
