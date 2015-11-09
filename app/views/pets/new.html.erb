@@ -1,0 +1,34 @@
+<h1>Create your new Pet.</h1>
+<p>Fill all fields.</p>
+
+<%= form_tag pets_path do %>
+  <div class="input-group">
+    <div>
+      <%= label_tag(:name, "Name") %>
+      <%= text_field_tag(:name) %>
+    </div>
+    <div>
+      <%= label_tag(:breed_id, "Choose pet Breed") %>
+      <%= select_tag(:breed_id, options_from_collection_for_select(Breed.all, :id, :name)) %>
+    </div>
+    <div>
+      <%= radio_button_tag(:gender, "male") %>
+      <%= label_tag(:gender_male, "My pet is male") %>
+    </div>
+    <div>
+      <%= radio_button_tag(:gender, "female") %>
+      <%= label_tag(:gender_female, "My pet is female") %>
+    </div>
+    <div>
+      <%= label_tag(:father_id, "Father") %>
+      <% fathers = options_for_select_parent_and_not_use(Pet.where_can_be_father) %>
+      <%= select_tag(:father_id, options_for_select(fathers)) %>
+    </div>
+    <div>
+      <%= label_tag(:mother_id, "Mother") %>
+      <% mothers = options_for_select_parent_and_not_use(Pet.where_can_be_mother) %>
+      <%= select_tag(:mother_id, options_for_select(mothers)) %>
+    </div>
+    <%= submit_tag("Create") %>
+  </div>
+<% end %>
