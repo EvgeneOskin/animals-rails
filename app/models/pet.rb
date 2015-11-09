@@ -10,6 +10,10 @@ class Pet < ActiveRecord::Base
   validates :owner, presence: true
   validates :gender, presence: true
 
+  def owner_email
+    owner.email
+  end
+
   def birth
     Birth.find_by child: self
   end

@@ -124,6 +124,9 @@ GEM
       rack-accept
       rack-mount
       virtus (>= 1.0.0)
+    grape-entity (0.4.8)
+      activesupport
+      multi_json (>= 1.3.2)
     hashie (3.4.3)
     http-cookie (1.0.2)
       domain_name (~> 0.5)
@@ -343,6 +346,7 @@ DEPENDENCIES
   factory_girl_rails
   faker
   grape
+  grape-entity
   jbuilder (~> 2.0)
   jquery-rails
   omniauth
