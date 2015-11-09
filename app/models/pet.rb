@@ -26,6 +26,14 @@ class Pet < ActiveRecord::Base
     birth.mother if birth && birth.mother
   end
 
+  def father_id
+    father.id if father
+  end
+
+  def mother_id
+    mother.id if mother
+  end
+
   def children
     if gender == 'male'
       births = Birth.where father: self

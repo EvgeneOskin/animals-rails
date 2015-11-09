@@ -2,6 +2,8 @@ module Animal
   module Entities
     class Id < Grape::Entity
       expose :id
+      expose :created_at
+      expose :updated_at
     end
 
     class Named < Id
@@ -12,6 +14,8 @@ module Animal
       expose :owner_email
       expose :breed_id
       expose :gender
+      expose :father_id
+      expose :mother_id
     end
 
     class Breed < Named
