@@ -16,7 +16,7 @@ module Animal
     http_basic do |username, password|
       # verify user's password here
       user = User.find_by email: username
-      user.valid_password? password
+      user.valid_password? password if user
     end
 
     desc 'Pet index.', {
@@ -36,7 +36,9 @@ module Animal
     end
     post '/pet' do
       authenticate!
-      Pet.create! params
+      Pet.transaction do
+        Pet.create_with_params! params, @current_user
+      end
     end
 
     desc 'Breed index.', {
@@ -55,17 +57,6 @@ module Animal
       authenticate!
       births = Birth.all
       present births, with: Entities::Birth, type: :full
-    end
-
-    desc 'Create a birth.', {
-      params: Entities::Birth.documentation
-    }
-    params do
-      requires :all, except: [:id], using: Entities::Birth.documentation.except(:id)
-    end
-    post '/birth' do
-      authenticate!
-      Birth.create! params
     end
   end
 end

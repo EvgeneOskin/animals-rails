@@ -43,6 +43,25 @@ class Pet < ActiveRecord::Base
     births.includes(:child).map(&:child)
   end
 
+  def self.create_with_params!(params, user)
+    pet = self.create! do |p|
+      p.name = params[:name]
+      p.breed_id = params[:breed_id]
+      p.gender = params[:gender]
+      p.owner = user
+    end
+    pet.create_birth_with_params! params
+    pet
+  end
+
+  def create_birth_with_params!(params)
+    Birth.create! do |b|
+      b.child = self
+      b.mother_id = params[:mother_id]
+      b.father_id = params[:father_id]
+    end
+  end
+
   def self.where_can_be_father
     where gender: 0
   end
