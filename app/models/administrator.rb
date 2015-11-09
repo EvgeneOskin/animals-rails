@@ -1,0 +1,7 @@
+# Model for authenticate to admin page.
+class Administrator < ActiveRecord::Base
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable and :omniauthable
+  devise :database_authenticatable,
+         :recoverable, :rememberable, :trackable, :validatable
+end

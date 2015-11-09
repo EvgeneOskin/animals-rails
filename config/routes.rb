@@ -1,4 +1,15 @@
 Rails.application.routes.draw do
+  devise_for :administrators
+  namespace :admin do
+    DashboardManifest::DASHBOARDS.each do |dashboard_resource|
+      resources dashboard_resource
+    end
+
+    root controller: DashboardManifest::ROOT_DASHBOARD, action: :index
+  end
+
+  resources :pets
+
   devise_for :users
   # The priority is based upon order of creation: first created -> highest
   # priority.
