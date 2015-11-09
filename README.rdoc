@@ -1,5 +1,5 @@
 == README
-{<img src="https://travis-ci.org/EvgeneOskin/hello_animals_rails.svg" alt="Build Status" />}[https://travis-ci.org/EvgeneOskin/hello_animals_rails] {<img src="https://coveralls.io/repos/EvgeneOskin/hello_animals_rails/badge.svg?branch=master&service=github" alt="Coverage Status" />}[https://coveralls.io/github/EvgeneOskin/hello_animals_rails?branch=master]
+{<img src="https://travis-ci.org/EvgeneOskin/animals-rails.svg?branch=master" alt="Build Status" />}[https://travis-ci.org/EvgeneOskin/animals-rails?branch=master] {<img src="https://coveralls.io/repos/EvgeneOskin/animals-rails/badge.svg?branch=master&service=github" alt="Coverage Status" />}[https://coveralls.io/github/EvgeneOskin/animals-rails?branch=master]
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
