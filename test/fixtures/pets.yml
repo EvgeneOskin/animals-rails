@@ -10,15 +10,16 @@ mother:
   name: Mother
   breed: dog
   owner: one
+  gender: female
 
 first_dog:
   name: First dog
   breed: dog
   owner: one
-  gender:
+  gender: male
 
 second_dog:
   name: Second dog
   breed: dog
   owner: one
-  gender:
+  gender: female
