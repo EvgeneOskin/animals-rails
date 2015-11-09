@@ -2,23 +2,24 @@
 
 father:
   name: Father
-  species: dog
+  breed: dog
   owner: one
-  gender: male
+  gender: 1
 
 mother:
   name: Mother
-  species: dog
+  breed: dog
   owner: one
+  gender: 0
 
-first_dog:
+full_family_dog:
   name: First dog
-  species: dog
+  breed: dog
   owner: one
-  gender:
+  gender: 0
 
-second_dog:
+single_parent_dog:
   name: Second dog
-  species: dog
+  breed: dog
   owner: one
-  gender:
+  gender: 1

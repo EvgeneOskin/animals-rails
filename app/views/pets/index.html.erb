@@ -1,0 +1,9 @@
+<h1>All Pets</h1>
+<p>
+<ul class="list-group">
+
+  <% Pet.all.each do |pet| %>
+    <li class="list-group-item"><a href="<%= pet_path id: pet.id %>"><%= pet.name %></a></li>
+  <% end %>
+</ul>
+</p>

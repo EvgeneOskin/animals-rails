@@ -1,4 +1,3 @@
-ruby '2.2.0'
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -36,8 +35,14 @@ gem 'omniauth-yandex'
 gem 'omniauth-mail_ru'
 gem 'actionpack'
 
+gem 'administrate'
+
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
+
+# Bootstrap styles.
+gem 'bootstrap-sass', '>= 3.3.5'
+gem 'sprockets-rails', '>= 2.3.3'
 
 group :production do
   # Use Unicorn as the app server
@@ -52,6 +57,10 @@ end
 group :development, :test do
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
+
+  # Generate users for tests.
+  gem 'factory_girl_rails'
+  gem 'faker'
 
   # Collect coverrage and publicate it.
   gem 'simplecov'
