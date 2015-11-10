@@ -8,26 +8,12 @@ class PetsController < ApplicationController
   def create
     Pet.transaction do
       pet = create_pet
-      create_birth(pet)
       redirect_to action: 'show', id: pet.id
     end
   end
 
   def create_pet
-    Pet.create! do |p|
-      p.name = params[:name]
-      p.breed_id = params[:breed_id]
-      p.gender = params[:gender]
-      p.owner = current_user
-    end
-  end
-
-  def create_birth(pet)
-    Birth.create! do |b|
-      b.child = pet
-      b.mother_id = params[:mother_id]
-      b.father_id = params[:father_id]
-    end
+    Pet.create_with_params! params, current_user
   end
 
   def index
